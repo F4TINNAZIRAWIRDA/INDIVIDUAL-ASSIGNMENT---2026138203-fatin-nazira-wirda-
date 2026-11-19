@@ -1,0 +1,125 @@
+/* timetable.css
+   Styles for the Task Plan tabs and the subject x week timetable. */
+
+/* Tabs (Table / Timetable) in the site's main colour */
+.nav-pills .nav-link { color: var(--primary); }
+.nav-pills .nav-link.active { background-color: var(--primary); color: #fff; }
+
+/* Timetable grid */
+.timetable th,
+.timetable td {
+  min-width: 96px;
+  vertical-align: top;
+  font-size: .85rem;
+}
+.timetable thead th { text-align: center; background: #f8f9fa; }
+.timetable .week-date { display: block; font-weight: 400; font-size: .7rem; color: #6c757d; }
+
+/* First column stays visible when the table is scrolled sideways on a phone */
+.timetable .subject-cell {
+  min-width: 170px;
+  position: sticky;
+  left: 0;
+  background: #fff;
+  z-index: 1;
+}
+.timetable thead .subject-cell { background: #f8f9fa; }
+
+/* The current week is highlighted */
+.timetable .week-now { background: #eef2ff; }
+
+/* Task chips: colour shows the status */
+.task-chip {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: .5rem;
+  padding: .25rem .4rem;
+  margin-bottom: .25rem;
+  font-size: .75rem;
+  text-align: left;
+  color: #fff;
+  cursor: pointer;
+}
+.task-chip:hover { filter: brightness(.92); }
+.chip-done     { background: #059669; }
+.chip-progress { background: #f59e0b; color: #212529; }
+.chip-upcoming { background: #2563eb; }
+
+/* Legend dots under the timetable */
+.legend-dot {
+  display: inline-block;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  margin-right: .35rem;
+  vertical-align: middle;
+}
+
+/* ---------- Task table: easier to read at a glance ---------- */
+
+/* Rows of the current week are highlighted, with a coloured bar on the left */
+.table .row-now > td { background-color: #eef2ff; }
+.table .row-now > td.week-cell { box-shadow: inset 4px 0 0 var(--primary); }
+
+/* Finished (Done) rows are faded so the work still to do stands out */
+.table .row-done > td { opacity: .6; }
+
+/* Week column: "Week 8" with its dates underneath */
+.week-cell { white-space: nowrap; }
+
+/* Coloured subject tag (the colour comes from SUBJECT_COLORS in timetable.js) */
+.subject-tag {
+  display: inline-block;
+  color: #fff;
+  font-weight: 600;
+  font-size: .8rem;
+  padding: .25em .6em;
+  border-radius: .4rem;
+}
+
+/* Little squares in the legend above the table */
+.legend-box {
+  display: inline-block;
+  width: 1rem;
+  height: .8rem;
+  border-radius: 3px;
+  margin-right: .35rem;
+  vertical-align: middle;
+}
+.legend-now   { background: #eef2ff; border-left: 4px solid var(--primary); }
+.legend-faded { background: #d1d5db; }
+
+/* ---------- Tick boxes (mark a task as Done) ---------- */
+.task-tick { width: 1.25rem; height: 1.25rem; cursor: pointer; }
+.form-check-input:checked { background-color: var(--primary); border-color: var(--primary); }
+.table .row-done > td.tick-cell { opacity: 1; }   /* keep the tick box clear even when the row is faded */
+.tick-cell { width: 3.5rem; }
+
+/* ---------- Note button next to a task title (tap or click to show the note) ---------- */
+.note-btn {
+  border: 0;
+  background: none;
+  min-width: 1.75rem;      /* a comfortable size to tap with a finger */
+  min-height: 1.75rem;
+  padding: 0 .25rem;
+  margin-left: .25rem;
+  color: var(--primary);
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.note-btn:hover { color: var(--primary-dark); }
+.task-note {
+  margin-top: .35rem;
+  padding: .35rem .6rem;
+  border-left: 3px solid var(--primary);
+  background: #eef2ff;
+  border-radius: .35rem;
+  font-size: .8rem;
+  color: #374151;
+}
+
+/* "Pending" (date or percentage not announced yet): a dotted underline hints that it has a meaning */
+.pending-text { text-decoration: underline dotted; cursor: help; }
