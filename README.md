@@ -53,7 +53,7 @@ subjects.js       Subject card rendering
 ```
 
 ## Links
-- Live site: https://YOUR-USERNAME.github.io/YOUR-REPO/
+- Live site: https://f4tinnazirawirda.github.io/INDIVIDUAL-ASSIGNMENT---2026138203-fatin-nazira-wirda-/
 - Repository: https://github.com/F4TINNAZIRAWIRDA/INDIVIDUAL-ASSIGNMENT---2026138203-fatin-nazira-wirda-.git
 
 *Developed and tested using Google Chrome.*
